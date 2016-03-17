@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -100,7 +102,9 @@ public class EditableDetailsActivity extends AppCompatActivity {
                 txtSave.setVisibility(View.VISIBLE);
             }
         });
-        //db realm config
+
+
+        //db realm config steps
 
         //realmConfiguration
         realm();
@@ -135,6 +139,12 @@ public class EditableDetailsActivity extends AppCompatActivity {
 
         } catch (RealmMigrationNeededException e) {
             try {
+                //Encryption generating a key...
+                byte[] key = new byte[64];
+                new SecureRandom().nextBytes(key);
+                RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this)
+                        .encryptionKey(key)
+                        .build();
                 Realm.deleteRealm(realmConfiguration);
                 //Realm file has been deleted.
                 Realm.getInstance(realmConfiguration);

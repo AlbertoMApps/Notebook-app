@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements SendDataDelete {
         return arrayRow;
     }
 
-    public void deleteRow(int position, String titleToDelete){
+    public void deleteRow(int position, String titleToDelete){ //position is the restadapter position, just find the one from the pointer of the list
 
     try {
         realm.beginTransaction();
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements SendDataDelete {
         RealmResults<Agenda> result = query.findAll();
         int i = 0;
         while (i < result.size()) {
-            if (result.get(i).getTitle()==(titleToDelete) || result.get(i).getAgendaCode() == position) {
+            if (i == position) {
                 result.get(i).removeFromRealm();
                 Log.d(" data deleted", result.get(i).getTitle());
             }
