@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NotebookAssesment</string>
+    <string name="action_save">SAVE</string>
+    <string name="action_delete">DELETE</string>
+    <string name="action_settings">Settings</string>
+    <string name="AddNote">Add note</string>
+    <string name="noteTitle">Add the title of your note:</string>
+    <string name="noteText">Add your note:</string>
+    <string name="dateMade">Date created:</string>
+    <string name="hintNote">Write your note here...</string>
+    <string name="hintTitle">Write your title here...</string>
+</resources>

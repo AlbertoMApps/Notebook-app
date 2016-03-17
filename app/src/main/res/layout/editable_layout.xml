@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffebcd"
+    android:weightSum="1">
+
+    <!--Toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AlertDialog.AppCompat" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:src="@android:drawable/sym_def_app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/save"
+            android:src="@android:drawable/ic_menu_save"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/noteTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noteTitle"/>
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_margin="20dp"
+        android:textColor="#008b8b"
+        android:hint="@string/hintTitle"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/noteBody"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noteText"/>
+    <EditText
+        android:id="@+id/editNoteBody"
+        android:layout_margin="20dp"
+        android:textColor="#008b8b"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintNote"
+        android:maxLength="200"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/dateMade"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateMade"/>
+    <TextView
+        android:id="@+id/tvDate"
+        android:textSize="18sp"
+        android:textColor="#008b8b"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateMade"
+        android:layout_weight="0.06" />
+
+</LinearLayout>
