@@ -158,12 +158,13 @@ public class MainActivity extends AppCompatActivity implements SendDataDelete {
         realm.beginTransaction();
         RealmQuery<Agenda> query = realm.where(Agenda.class);
         RealmResults<Agenda> result = query.findAll();
-
-        for (int i = 0; i < result.size(); i++) {
-            if (result.get(i).getTitle()==(titleToDelete)) {
+        int i = 0;
+        while (i < result.size()) {
+            if (result.get(i).getTitle()==(titleToDelete) || result.get(i).getAgendaCode() == position) {
                 result.get(i).removeFromRealm();
                 Log.d(" data deleted", result.get(i).getTitle());
             }
+            i++;
         }
     }catch(Exception e){
         e.printStackTrace();
@@ -223,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements SendDataDelete {
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteRow(position, getTitleToDelete());
+                        deleteRow(getPosition(), getTitleToDelete());
                         //refresh the data
                         realm.refresh();
                         agendaArrayList = getAllAgendaData();
